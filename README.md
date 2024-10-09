@@ -29,7 +29,11 @@ that helps fingerprinting a Google Cloud physical host.
 #### Deploy the Service
 To deploy the service using Google Cloud CLI, you can execute a command similar to:
 ```bash
-gcloud run deploy <Service name> --region=<GCR region> --source=<Path to service directory> --memory=<Memory requirement in MiB>Mi --cpu=<CPU requirement> --max-instances=1000 --concurrency=1 --timeout=3600 --session-affinity --allow-unauthenticated
+gcloud run deploy <Service name> \
+  --region=<GCR region> --source=<Path to service directory> \
+  --memory=<Memory requirement in MiB>Mi --cpu=<CPU requirement> \
+  --max-instances=1000 --concurrency=1 --timeout=3600 \
+  --session-affinity --allow-unauthenticated
 ```
 Please refer to Google Cloud's [documentation](https://cloud.google.com/sdk/gcloud/reference/run/deploy) on the command and
 [documentation](https://cloud.google.com/run/docs/deploying) about deploying GCR services in general.
@@ -40,7 +44,8 @@ It is also required to enable unauthenticated accesses `--allow-unauthenticated`
 
 The default service configuration that we used is:
 ```
---memory=512Mi --cpu=1 --max-instances=1000 --concurrency=1 --timeout=3600 --session-affinity --allow-unauthenticated
+--memory=512Mi --cpu=1 --max-instances=1000 --concurrency=1 \
+--timeout=3600 --session-affinity --allow-unauthenticated
 ```
 
 To learn more about deploying a service to Google Cloud Run via CLI,
